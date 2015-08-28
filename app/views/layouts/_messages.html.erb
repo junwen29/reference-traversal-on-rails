@@ -1,0 +1,8 @@
+<% flash.each do |key, value| %>
+  <div id="home-flash" data-url="<%=value%>">
+  </div>
+  <script>
+  var message = $("#home-flash").data('url');
+  Materialize.toast(message, 4000);
+   </script>
+<% end %>

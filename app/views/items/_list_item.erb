@@ -1,0 +1,29 @@
+<!--  <p id="notice"><%= notice %></p> -->
+<div id="items_<%=list_id%>">
+<% if @items.blank? %>
+    <p>List currently has no items</p>
+<% else %>
+<table>
+  <tbody>
+    <h5>Items</h5>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td>x<%= item.quantity %></td>
+        <td>
+          <%= link_to edit_item_path(item, :list_id => item.list_id), remote: true do %>
+              <i class="small material-icons grey-text text-darken-1">edit</i>
+          <% end %>
+        </td>
+        <td><%= link_to item, remote: true, method: :delete,
+            data: { confirm: 'Are you sure?' } do %>
+        <i class="small material-icons grey-text text-darken-1">delete</i>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ <% end %>
+ 
+ </div>

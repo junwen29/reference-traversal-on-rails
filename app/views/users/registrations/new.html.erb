@@ -1,0 +1,47 @@
+<div class="container">
+<h2>Sign up </h2>
+<h5> Lazy to even type your email? </h5>
+<%= link_to "Sign Up Using Facebook Now!", user_omniauth_authorize_path(:facebook), class: "blue darken-3 white-text btn" %>
+  
+  <br/><br/>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <!--<div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "off"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Tell_us_about_yourself%><br />
+    <%= f.text_field :bio %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, :value => request.env["omniauth.auth"] %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :password %>
+    <% if @validatable %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+</div>

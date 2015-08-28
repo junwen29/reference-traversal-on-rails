@@ -1,0 +1,14 @@
+
+  
+  <div class="row center-align">
+    <h3> Items to bring for  weather</h3>
+    <ul>
+      <% @cities.each do |i|%>
+      <li>
+        <h5>
+        <%= i.name + " " + i.country_code %>
+        </h5>
+      </li>
+      <% end %>
+    </ul>
+  </div>

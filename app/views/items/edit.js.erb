@@ -1,0 +1,6 @@
+$('#item-form').html("<%= j (render 'form',  :formats => :html) %>");
+$('#item-content').html("<%= j (render 'form',  :formats => :html) %>");
+$('#new_item_modal').openModal();
+$('#item_name').focus();
+//legacy code
+//$('#list-form').slideDown(350);

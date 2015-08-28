@@ -1,0 +1,4 @@
+$('#items_<%=@list_id%>').html("<%= j (render partial: "items/list_item", :locals => {:list_id => @list_id }) %>");
+$('#new_item_modal').closeModal();
+//$('#list-form').slideUp(350);
+Materialize.toast('Item Added!', 4000)

@@ -1,0 +1,28 @@
+<div id="mainBody">
+  <!-- Services Section -->  
+    <section id="country_and_duration">
+      <div class="container">
+        <div class="col s12 m8 l12 center-align">
+            <h3 class="white-text">Travel Packing List Generator</h3>
+            <h4 class="white-text">Enter your destination below.</h4>
+        </div>
+        <div class="row">
+          <div class="col s12 m6 l6 offset-m3 offset-l3 center-align">
+      <%=form_tag({controller: "main_pages", action: "list_results"}, method: "post") do%>
+      
+      <%= label_tag :city, nil, class: "white-text" %>
+      <%= autocomplete_field_tag :city, nil, autocomplete_city_name_and_cc_main_pages_path, class: "white-text", placeholder: "Enter the City name", :autofocus => true, :required => true %>
+
+      <%= label_tag :duration, nil, class: "white-text" %>
+      <%= number_field_tag :duration, nil, min: 1, max: 21, step: 1, class: "white-text", placeholder: "Enter the number of days", :required => true %>
+      <br/>
+      <%= submit_tag "Submit", class: "btn btn-primary" %>
+      
+      <% end %>
+
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+

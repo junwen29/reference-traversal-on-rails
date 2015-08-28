@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  season: MyString
+  itemType: MyString
+  minTemp: 1
+  maxTemp: 1
+
+two:
+  name: MyString
+  season: MyString
+  itemType: MyString
+  minTemp: 1
+  maxTemp: 1

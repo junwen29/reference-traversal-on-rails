@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails traversal-on-rails: development" uuid="128dd97e-d3b0-4eae-8e7d-0db93f01503d">
+      <first-sync>true</first-sync>
+      <user-name>wangpp</user-name>
+    </data-source>
+    <data-source name="Rails traversal-on-rails: test" uuid="befcdf8b-4cb5-4f99-8bd5-a9e7b53b1e05">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails traversal-on-rails: production" uuid="cfe94a75-80ea-4f66-b7c8-1025844ffbed">
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>

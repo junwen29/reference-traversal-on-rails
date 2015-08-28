@@ -1,0 +1,18 @@
+<div class="navbar-fixed">
+<nav>
+   <div class="nav-wrapper">
+     <a href="#" class="brand-logo center">The Traversal Team</a>
+     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+     <ul id="nav-mobile" class="left hide-on-med-and-down">
+       <li><a href="<%=traversal_home_path%>">Back to App</a></li>
+       <li class="<%='active' if request.fullpath == "/main_pages/about_us" %>"><a href="<%=traversal_about_us_path%>">About Us</a></li>
+       <li class="<%='active' if request.fullpath == "/main_pages/contact_us" %>"><a href="<%=traversal_contact_us_path%>">Contact Us</a></li>
+     </ul>
+     <ul class="side-nav" id="mobile-demo">
+       <li><a href="<%=traversal_home_path%>">Back to App</a></li>
+       <li class="<%='active' if request.fullpath == "/main_pages/about_us" %>"><a href="<%=traversal_about_us_path%>">About Us</a></li>
+       <li class="<%='active' if request.fullpath == "/main_pages/contact_us" %>"><a href="<%=traversal_contact_us_path%>">Contact Us</a></li>
+       </ul>
+   </div>
+ </nav>
+</div>

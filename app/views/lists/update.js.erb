@@ -1,0 +1,4 @@
+$('#lists').html("<%= j (render @lists) %>");
+$('#new_list_modal').closeModal();
+//$('#list-form').slideUp(350);
+Materialize.toast('List Edited!', 4000)

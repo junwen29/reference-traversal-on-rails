@@ -1,0 +1,5 @@
+$('#list-form').html("<%= j (render 'form',  :formats => :html) %>");
+$('#list-content').html("<%= j (render 'form',  :formats => :html) %>");
+$('#new_list_modal').openModal();
+//legacy code
+//$('#list-form').slideDown(350);

@@ -1,0 +1,28 @@
+<li>
+  <div class="collapsible-header">
+    <i class="material-icons">filter_drama</i>
+  <%= list.name%> - <span class="teal-text text-lighten-2"><%= list.description%></span>
+  
+  <span class="edit right">
+    <%= link_to edit_list_path(list), remote: true do %>
+        <i class="small material-icons grey-text text-darken-1">edit</i>
+    <% end %>
+
+    <%= link_to list, remote: true, method: :delete,
+        data: { confirm: 'Are you sure?' } do %>
+    <i class="small material-icons grey-text text-darken-1">delete</i>
+    <% end %>
+  </span>
+</div>
+  <% @items =  list.items.order("id ASC")  %>  
+  <div class="collapsible-body">
+      <%= render partial: "items/list_item", :locals => {:list_id => list.id }%>
+   <br>
+   <%= link_to new_item_path(:list_id => list.id), remote: true do %>
+     <button class="waves-effect waves-light btn blue">New Item</button>
+   <% end %>
+  </div>
+
+
+</li>
+

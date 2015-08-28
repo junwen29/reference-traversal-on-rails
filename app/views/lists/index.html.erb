@@ -1,0 +1,58 @@
+
+  <div id="user--lists" class="col s12 m8 l8">
+    <div style="font-size:2rem;">Lists</div>
+      <ul id="lists" class="collapsible" data-collapsible="expandable">  
+        <%= render @lists %>
+       </ul>
+      
+  <br/>
+
+  <!-- Modal Trigger -->
+  <%= link_to new_list_path(:params => params), remote: true do %>
+    <button class="waves-effect waves-light btn">New List</button>
+  <% end %>
+
+  <!-- Modal Structure -->
+  <div id="new_list_modal" class="modal">
+    <div class="modal-content">
+      <h4>New List Information</h4>
+      <p id="list-content">
+      
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a id="list_new_submit_btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Create</a>
+    </div>
+  </div>
+  
+  <div id="new_item_modal" class="modal">
+    <div class="modal-content">
+      <h4>New Item Information</h4>
+      <p id="item-content">
+      
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a id="item_new_submit_btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Create</a>
+    </div>
+  </div>
+  <!-- insert a jquery code to click the create which is hidden to submit the new listing -->
+  
+  <!-- legacy purposes -->
+  <!--  <div id="list-form" style="display:none;"></div> --> 
+  
+  </div>
+  
+  <% content_for :script  do%> <!-- type JS code here to add into js at the footer -->
+  $("#list_new_submit_btn").on("click", function(){
+    $("#list_new_submit").click();
+  });
+  
+  $("#item_new_submit_btn").on("click", function(){
+    $("#item_new_submit").click();
+  });
+  <% end %>
+
+     

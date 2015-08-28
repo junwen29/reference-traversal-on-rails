@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= favicon_link_tag 'favicon.ico'%>
+  <title><%= !@html_title.blank? ? @html_title  : "Traversal" %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "autocomplete-rails.js" %>
+  <%= csrf_meta_tags %>
+  <script src="//use.typekit.net/enm1ixs.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+  <div id="fb-root"></div>
+  <% if !@team_page %>
+    <%= render 'layouts/header' %>
+  <% else %>
+    <%= render 'layouts/team_header' %>
+  <% end %>
+   <%= render 'layouts/messages' %>
+  <%= yield %>
+</body>
+<footer>
+<script>
+  $(document).ready(function(){
+    
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=383718101838274";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+    // Initialize collapse button
+ $(".button-collapse").sideNav();
+ $(".owl-carousel").owlCarousel(
+  {
+    autoPlay: 3000, // Show next and prev buttons
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem:true
+  }
+);
+  <%= yield :script %>
+
+ });
+
+
+ </script>
+</footer>
+<%= debug(params) if Rails.env.development? %>
+</html>
